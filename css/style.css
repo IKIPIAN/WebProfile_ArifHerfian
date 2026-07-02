@@ -1,0 +1,834 @@
+/* ============================================
+   CSS Website Profil - Arif Herfian
+   Font: Poppins | Icon: Font Awesome
+   ============================================ */
+
+/* variabel warna, biar gampang kalau mau ganti tema */
+:root {
+  --warna-utama: #4a6cf7;
+  --warna-utama-tua: #3a56d4;
+  --warna-muda: rgba(74, 108, 247, 0.1);
+  --warna-bg: #f7f8fc;
+  --warna-bg-beda: #eef1fb;
+  --warna-kartu: #ffffff;
+  --warna-teks: #24292f;
+  --warna-teks-abu: #6b7280;
+  --warna-garis: #e3e6ef;
+  --bayangan: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* warna untuk mode gelap */
+body.gelap {
+  --warna-bg: #131722;
+  --warna-bg-beda: #181d2b;
+  --warna-kartu: #1e2433;
+  --warna-teks: #e8eaf1;
+  --warna-teks-abu: #9aa1b5;
+  --warna-garis: #2b3247;
+  --bayangan: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--warna-bg);
+  color: var(--warna-teks);
+  line-height: 1.7;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.bg-beda {
+  background-color: var(--warna-bg-beda);
+}
+
+/* judul tiap section */
+.judul-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.judul-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.judul-section h2 span {
+  color: var(--warna-utama);
+}
+
+.judul-section p {
+  color: var(--warna-teks-abu);
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+/* ============================================
+   KOMPONEN YANG DIPAKAI BERULANG
+   ============================================ */
+
+.kartu {
+  background-color: var(--warna-kartu);
+  border: 1px solid var(--warna-garis);
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kartu:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--bayangan);
+}
+
+/* kotak icon biru, dipakai di banyak section */
+.kartu-icon,
+.pendidikan-icon,
+.kode-bahasa,
+.skill-item i,
+.kontak-item i {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--warna-muda);
+  color: var(--warna-utama);
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+/* judul dan deskripsi kecil di dalam kartu */
+.skill-item h4,
+.bahasa-item h4,
+.kontak-item h4,
+.sertifikat-kartu h4 {
+  font-size: 15px;
+}
+
+.skill-item p,
+.bahasa-item p,
+.kontak-item p,
+.sertifikat-kartu p {
+  font-size: 13px;
+  color: var(--warna-teks-abu);
+}
+
+/* tombol */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-utama {
+  background-color: var(--warna-utama);
+  color: #fff;
+}
+
+.btn-utama:hover {
+  background-color: var(--warna-utama-tua);
+  transform: translateY(-2px);
+}
+
+.btn-garis {
+  border: 2px solid var(--warna-utama);
+  color: var(--warna-utama);
+  background: transparent;
+}
+
+.btn-garis:hover {
+  background-color: var(--warna-utama);
+  color: #fff;
+}
+
+.btn-penuh {
+  width: 100%;
+  text-align: center;
+}
+
+/* label kecil / tag */
+.label-grup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: var(--warna-muda);
+  color: var(--warna-utama);
+  font-weight: 500;
+}
+
+/* animasi muncul waktu discroll */
+.muncul {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.muncul.tampil {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.jarak-atas {
+  margin-top: 30px;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  transition: 0.3s;
+}
+
+/* navbar dikasih background setelah discroll */
+.navbar.discroll {
+  background-color: var(--warna-kartu);
+  box-shadow: var(--bayangan);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--warna-utama);
+}
+
+.menu {
+  display: flex;
+  gap: 5px;
+}
+
+.menu a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--warna-utama);
+}
+
+.menu a.aktif {
+  color: var(--warna-utama);
+  background-color: var(--warna-muda);
+}
+
+.nav-kanan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tombol-tema,
+.tombol-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--warna-teks);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.tombol-tema:hover {
+  color: var(--warna-utama);
+  background-color: var(--warna-muda);
+}
+
+.tombol-menu {
+  display: none; /* cuma muncul di hp */
+}
+
+/* ============================================
+   HOME / BERANDA
+   ============================================ */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 20px 60px;
+}
+
+.home-isi {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+}
+
+.sapaan {
+  color: var(--warna-utama);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.home-teks h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.home-teks h1 span {
+  color: var(--warna-utama);
+}
+
+.profesi {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#teksKetik {
+  color: var(--warna-utama);
+  font-weight: 600;
+}
+
+/* kursor kedip di sebelah teks ketik */
+.kursor {
+  color: var(--warna-utama);
+  animation: kedip 0.8s infinite;
+}
+
+@keyframes kedip {
+  50% { opacity: 0; }
+}
+
+.lokasi {
+  color: var(--warna-teks-abu);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.lokasi i {
+  color: var(--warna-utama);
+  margin-right: 5px;
+}
+
+.home-tombol {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.home-statistik {
+  display: flex;
+  gap: 40px;
+}
+
+.statistik h3 {
+  font-size: 26px;
+  color: var(--warna-utama);
+}
+
+.statistik p {
+  font-size: 13px;
+  color: var(--warna-teks-abu);
+}
+
+.home-foto img {
+  width: 280px;
+  height: 340px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  border: 4px solid var(--warna-utama);
+  box-shadow: var(--bayangan);
+}
+
+/* ============================================
+   TENTANG
+   ============================================ */
+.tentang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.tentang-grid .kartu {
+  padding: 30px 25px;
+}
+
+.kartu-icon {
+  margin-bottom: 18px;
+}
+
+.tentang-grid h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tentang-grid p,
+.pengalaman-item ul li,
+.pendidikan-desc {
+  font-size: 14px;
+  color: var(--warna-teks-abu);
+}
+
+/* ============================================
+   PENGALAMAN & PENDIDIKAN
+   ============================================ */
+.pengalaman-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pengalaman-item {
+  padding: 30px;
+}
+
+/* bagian atas kartu pengalaman & pendidikan bentuknya sama */
+.pengalaman-atas,
+.pendidikan-atas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.pengalaman-atas h3,
+.pendidikan-atas h3 {
+  font-size: 20px;
+}
+
+.nama-instansi {
+  color: var(--warna-utama);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nama-instansi i {
+  font-size: 11px;
+  margin-left: 3px;
+}
+
+.nama-instansi:hover {
+  text-decoration: underline;
+}
+
+.periode {
+  font-size: 13px;
+  color: var(--warna-teks-abu);
+  background-color: var(--warna-bg);
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--warna-garis);
+}
+
+.periode i {
+  margin-right: 5px;
+}
+
+.pengalaman-item ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.pengalaman-item ul li {
+  margin-bottom: 5px;
+}
+
+.pendidikan-kartu {
+  display: flex;
+  gap: 25px;
+  padding: 35px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pendidikan-nilai {
+  text-align: right;
+}
+
+.badge-lulus {
+  display: block;
+  font-size: 12px;
+  color: var(--warna-teks-abu);
+  border: 1px solid var(--warna-garis);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+.ipk {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--warna-utama);
+}
+
+.pendidikan-desc {
+  margin-bottom: 15px;
+}
+
+/* ============================================
+   KEAHLIAN
+   ============================================ */
+.keahlian-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.sub-judul {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* kartu skill teknis & profesional bentuk dasarnya sama */
+.skill-item,
+.prof-item {
+  background-color: var(--warna-kartu);
+  border: 1px solid var(--warna-garis);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skill-item:hover,
+.prof-item:hover {
+  border-color: var(--warna-utama);
+}
+
+.skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 18px;
+  margin-bottom: 12px;
+}
+
+.prof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.prof-item {
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.prof-item i {
+  color: var(--warna-utama);
+  margin-right: 8px;
+}
+
+.bahasa-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+}
+
+.kode-bahasa {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ============================================
+   SERTIFIKAT
+   ============================================ */
+.sertifikat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.sertifikat-kartu {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sertifikat-kartu i {
+  font-size: 26px;
+  color: var(--warna-utama);
+  margin-bottom: 8px;
+}
+
+.sertifikat-kartu p {
+  flex-grow: 1;
+}
+
+.sertifikat-kartu .label {
+  align-self: flex-start;
+}
+
+/* ============================================
+   KONTAK
+   ============================================ */
+.kontak-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+}
+
+.kontak-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kontak-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+}
+
+.form-kontak {
+  padding: 30px;
+}
+
+.form-kontak h3 {
+  margin-bottom: 20px;
+}
+
+.form-grup {
+  margin-bottom: 15px;
+}
+
+.form-grup label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-grup input,
+.form-grup textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--warna-garis);
+  border-radius: 8px;
+  background-color: var(--warna-bg);
+  color: var(--warna-teks);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.form-grup input:focus,
+.form-grup textarea:focus {
+  border-color: var(--warna-utama);
+}
+
+/* ============================================
+   FOOTER & TOMBOL KE ATAS
+   ============================================ */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid var(--warna-garis);
+}
+
+.footer-nama {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-sosial {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-sosial a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--warna-garis);
+  border-radius: 50%;
+  color: var(--warna-teks-abu);
+  transition: 0.3s;
+}
+
+.footer-sosial a:hover {
+  background-color: var(--warna-utama);
+  border-color: var(--warna-utama);
+  color: #fff;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--warna-teks-abu);
+}
+
+.ke-atas {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--warna-utama);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+  box-shadow: var(--bayangan);
+  z-index: 99;
+  transition: 0.3s;
+}
+
+.ke-atas:hover {
+  background-color: var(--warna-utama-tua);
+}
+
+.ke-atas.tampil {
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media screen and (max-width: 900px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  /* menu jadi dropdown di layar kecil */
+  .menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--warna-kartu);
+    box-shadow: var(--bayangan);
+    padding: 20px;
+    display: none;
+  }
+
+  .menu.buka {
+    display: flex;
+  }
+
+  .tombol-menu {
+    display: block;
+  }
+
+  .home-isi {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .home-tombol,
+  .home-statistik {
+    justify-content: center;
+  }
+
+  .home-foto img {
+    width: 200px;
+    height: 240px;
+  }
+
+  .home-teks h1 {
+    font-size: 32px;
+  }
+
+  .judul-section h2 {
+    font-size: 26px;
+  }
+
+  .tentang-grid,
+  .keahlian-grid,
+  .kontak-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pendidikan-kartu {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .home-statistik {
+    gap: 25px;
+  }
+
+  .sertifikat-grid,
+  .prof-grid {
+    grid-template-columns: 1fr;
+  }
+}

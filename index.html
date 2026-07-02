@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website profil Arif Herfian Zaen Chartiko - Lulusan S1 Pendidikan Teknik Informatika Universitas Negeri Malang">
+  <title>Profil - Arif Herfian Zaen Chartiko</title>
+
+  <!-- font poppins dari google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- icon dari font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="logo">Arif<span>Herfian</span></a>
+
+    <ul class="menu" id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#pengalaman">Pengalaman</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#pendidikan">Pendidikan</a></li>
+      <li><a href="#sertifikat">Sertifikat</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+
+    <div class="nav-kanan">
+      <!-- tombol ganti tema gelap/terang -->
+      <button class="tombol-tema" id="tombolTema" title="Ganti tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="tombol-menu" id="tombolMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HOME / BERANDA ===== -->
+  <section class="home" id="home">
+    <div class="home-isi">
+      <div class="home-teks">
+        <p class="sapaan">Halo, perkenalkan saya</p>
+        <h1>Arif Herfian <span>Zaen Chartiko</span></h1>
+        <p class="profesi">Saya seorang <span id="teksKetik"></span><span class="kursor">|</span></p>
+        <p class="lokasi"><i class="fa-solid fa-location-dot"></i> Kab. Blitar, Jawa Timur</p>
+
+        <div class="home-tombol">
+          <a href="#kontak" class="btn btn-utama">Hubungi Saya</a>
+          <a href="#tentang" class="btn btn-garis">Lihat Profil</a>
+        </div>
+
+        <div class="home-statistik">
+          <div class="statistik">
+            <h3>3.62</h3>
+            <p>IPK</p>
+          </div>
+          <div class="statistik">
+            <h3>6</h3>
+            <p>Bulan Mengajar</p>
+          </div>
+          <div class="statistik">
+            <h3>5+</h3>
+            <p>Sertifikat</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-foto">
+        <img src="assets/foto.jpeg" alt="Foto Arif Herfian Zaen Chartiko">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG SAYA ===== -->
+  <section class="section" id="tentang">
+    <div class="container">
+      <div class="judul-section muncul">
+        <h2>Tentang <span>Saya</span></h2>
+        <p>Sedikit gambaran mengenai latar belakang saya</p>
+      </div>
+
+      <div class="tentang-grid">
+        <div class="kartu muncul">
+          <div class="kartu-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3>Pendidik Informatika</h3>
+          <p>Lulusan S1 Pendidikan Teknik Informatika Universitas Negeri Malang dengan pengalaman mengajar di SMKN 3 Malang. Berfokus pada pengembangan kompetensi digital siswa melalui pendekatan Kurikulum Merdeka.</p>
+        </div>
+        <div class="kartu muncul">
+          <div class="kartu-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Pengembang &amp; Desainer</h3>
+          <p>Menguasai pemrograman web (HTML, CSS, JS, Python), desain UI, dan tools produktivitas digital. Aktif membangun portofolio teknis sambil terus mengikuti perkembangan teknologi terkini.</p>
+        </div>
+        <div class="kartu muncul">
+          <div class="kartu-icon"><i class="fa-solid fa-folder-open"></i></div>
+          <h3>Administrator</h3>
+          <p>Berpengalaman sebagai Staff Administrasi di Dinas Pendidikan Kota Malang. Terlatih dalam analisis data, koordinasi tim, dan pengelolaan dokumen berbasis digital.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PENGALAMAN KERJA ===== -->
+  <section class="section bg-beda" id="pengalaman">
+    <div class="container">
+      <div class="judul-section muncul">
+        <h2>Pengalaman <span>Kerja</span></h2>
+        <p>Riwayat pekerjaan yang pernah saya jalani</p>
+      </div>
+
+      <div class="pengalaman-list">
+        <div class="kartu pengalaman-item muncul">
+          <div class="pengalaman-atas">
+            <div>
+              <h3>Guru Informatika</h3>
+              <a href="https://smkn3malang.sch.id/" target="_blank" class="nama-instansi">SMKN 3 Malang <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <span class="periode"><i class="fa-regular fa-calendar"></i> Januari - Juni 2024</span>
+          </div>
+          <ul>
+            <li>Mengajar mata pelajaran Pemrograman Dasar dan proyek pembuatan FrontEnd Web</li>
+            <li>Mengajar mata pelajaran Jaringan Dasar</li>
+            <li>Mengajar mata pelajaran Teknologi Layanan Jaringan (TLJ)</li>
+            <li>Menyusun perangkat ajar berbasis Kurikulum Merdeka (ATP &amp; Modul Ajar)</li>
+            <li>Mendigitalisasi arsip sekolah dan mendukung kegiatan administrasi</li>
+          </ul>
+          <div class="label-grup">
+            <span class="label">Kurikulum Merdeka</span>
+            <span class="label">Pemrograman Web</span>
+            <span class="label">Cisco</span>
+            <span class="label">TLJ</span>
+          </div>
+        </div>
+
+        <div class="kartu pengalaman-item muncul">
+          <div class="pengalaman-atas">
+            <div>
+              <h3>Staff Administrasi</h3>
+              <a href="https://dikbud.malangkota.go.id/" target="_blank" class="nama-instansi">Dinas Pendidikan Kota Malang <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <span class="periode"><i class="fa-regular fa-calendar"></i> Juni - Agustus 2024</span>
+          </div>
+          <ul>
+            <li>Mengelola penulisan disposisi serta pencatatan surat masuk dan keluar</li>
+            <li>Mendata dan mendistribusikan buku kurikulum serta seragam sekolah</li>
+            <li>Menangani koreksi kesalahan penulisan ijazah siswa</li>
+            <li>Membantu pengelolaan administrasi dana BOSDA dan NPHD</li>
+          </ul>
+          <div class="label-grup">
+            <span class="label">Administrasi</span>
+            <span class="label">Google Workspace</span>
+            <span class="label">MS Office</span>
+            <span class="label">Koordinasi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEAHLIAN ===== -->
+  <section class="section" id="keahlian">
+    <div class="container">
+      <div class="judul-section muncul">
+        <h2>Keahlian <span>Saya</span></h2>
+        <p>Kemampuan teknis dan non teknis yang saya miliki</p>
+      </div>
+
+      <div class="keahlian-grid">
+        <!-- skill teknis -->
+        <div class="muncul">
+          <h3 class="sub-judul">Kemampuan Teknis</h3>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-code"></i>
+            <div>
+              <h4>Pemrograman Web</h4>
+              <p>HTML, CSS, JavaScript, dan dasar pembuatan tampilan web yang responsif.</p>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-brands fa-python"></i>
+            <div>
+              <h4>Python</h4>
+              <p>Dasar pemrograman, latihan logika, dan otomasi sederhana.</p>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <div>
+              <h4>UI Design</h4>
+              <p>Penyusunan layout, pemilihan warna, tipografi, dan pengalaman pengguna dasar.</p>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-network-wired"></i>
+            <div>
+              <h4>Cisco Packet Tracer</h4>
+              <p>Simulasi jaringan dasar, konfigurasi perangkat, dan praktik troubleshooting.</p>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <i class="fa-solid fa-file-word"></i>
+            <div>
+              <h4>MS Office &amp; Google Workspace</h4>
+              <p>Pengolahan dokumen, spreadsheet, formulir, dan kolaborasi digital.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- skill non teknis dan bahasa -->
+        <div class="muncul">
+          <h3 class="sub-judul">Kemampuan Profesional</h3>
+          <div class="prof-grid">
+            <div class="prof-item"><i class="fa-solid fa-person-chalkboard"></i> Presentasi</div>
+            <div class="prof-item"><i class="fa-solid fa-chart-simple"></i> Analisis Data</div>
+            <div class="prof-item"><i class="fa-solid fa-file-lines"></i> Administrasi</div>
+            <div class="prof-item"><i class="fa-solid fa-graduation-cap"></i> Pendidikan Guru</div>
+            <div class="prof-item"><i class="fa-solid fa-people-group"></i> Koordinasi Tim</div>
+            <div class="prof-item"><i class="fa-solid fa-magnifying-glass"></i> Ketelitian</div>
+          </div>
+
+          <h3 class="sub-judul jarak-atas">Bahasa</h3>
+          <div class="kartu bahasa-item">
+            <span class="kode-bahasa">ID</span>
+            <div>
+              <h4>Bahasa Indonesia</h4>
+              <p>Native / Bahasa Ibu</p>
+            </div>
+          </div>
+          <div class="kartu bahasa-item">
+            <span class="kode-bahasa">EN</span>
+            <div>
+              <h4>Bahasa Inggris</h4>
+              <p>Pre-Advanced (Skor UKBIng 444)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PENDIDIKAN ===== -->
+  <section class="section bg-beda" id="pendidikan">
+    <div class="container">
+      <div class="judul-section muncul">
+        <h2>Riwayat <span>Pendidikan</span></h2>
+        <p>Jenjang pendidikan yang telah saya tempuh</p>
+      </div>
+
+      <div class="kartu pendidikan-kartu muncul">
+        <div class="pendidikan-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="pendidikan-isi">
+          <div class="pendidikan-atas">
+            <div>
+              <h3>S1 Pendidikan Teknik Informatika</h3>
+              <a href="https://um.ac.id/" target="_blank" class="nama-instansi">Universitas Negeri Malang <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="pendidikan-nilai">
+              <span class="badge-lulus">Lulus 2025</span>
+              <span class="ipk">IPK 3.62</span>
+            </div>
+          </div>
+          <p class="pendidikan-desc">Program studi yang memadukan ilmu pendidikan dengan teknologi informatika. Berfokus pada pengembangan kompetensi calon pendidik di bidang rekayasa perangkat lunak, jaringan, dan sistem informasi.</p>
+          <div class="label-grup">
+            <span class="label">Pendidikan Teknologi</span>
+            <span class="label">Rekayasa Perangkat Lunak</span>
+            <span class="label">Jaringan Komputer</span>
+            <span class="label">Sistem Informasi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERTIFIKAT ===== -->
+  <section class="section" id="sertifikat">
+    <div class="container">
+      <div class="judul-section muncul">
+        <h2>Sertifikat &amp; <span>Prestasi</span></h2>
+        <p>Klik kartu untuk melihat file sertifikat</p>
+      </div>
+
+      <div class="sertifikat-grid">
+        <a href="assets/UKBing_Arif%20Herfian%20Zaen%20Chartiko.pdf" target="_blank" class="kartu sertifikat-kartu muncul">
+          <i class="fa-solid fa-language"></i>
+          <h4>UKBIng</h4>
+          <p>Pre-Advanced - Skor 444</p>
+          <span class="label">Bahasa Inggris</span>
+        </a>
+        <a href="assets/Sertifikat%20Keorganisasian_WSE.pdf" target="_blank" class="kartu sertifikat-kartu muncul">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h4>PJ Service Center</h4>
+          <p>Koordinasi Perawatan Hardware &amp; Software</p>
+          <span class="label">WSE</span>
+        </a>
+        <a href="assets/Sertifikat%20Keorganisasian_WATS.pdf" target="_blank" class="kartu sertifikat-kartu muncul">
+          <i class="fa-solid fa-microchip"></i>
+          <h4>Pemateri IoT</h4>
+          <p>Instruktur Internet of Things</p>
+          <span class="label">WSE</span>
+        </a>
+        <a href="assets/Sertifikat%20Keorganisasian_LKTIN.pdf" target="_blank" class="kartu sertifikat-kartu muncul">
+          <i class="fa-solid fa-pen-nib"></i>
+          <h4>Panitia LKTIN PESC</h4>
+          <p>Lomba Karya Tulis Ilmiah Nasional</p>
+          <span class="label">WSE</span>
+        </a>
+        <a href="assets/Sertifikat%20Keorganisasian_LTDC.pdf" target="_blank" class="kartu sertifikat-kartu muncul">
+          <i class="fa-solid fa-robot"></i>
+          <h4>Panitia LTDC</h4>
+          <p>Line Tracer Design and Contest Nasional</p>
+          <span class="label">WSE</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONTAK ===== -->
+  <section class="section bg-beda" id="kontak">
+    <div class="container">
+      <div class="judul-section muncul">
+        <h2>Hubungi <span>Saya</span></h2>
+        <p>Terbuka untuk peluang mengajar, kolaborasi, atau diskusi seputar pendidikan dan teknologi</p>
+      </div>
+
+      <div class="kontak-grid">
+        <div class="kontak-info muncul">
+          <a href="mailto:arif.herfian@gmail.com" class="kartu kontak-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>arif.herfian@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://wa.me/6285790226536" target="_blank" class="kartu kontak-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>+62 857-9022-6536</p>
+            </div>
+          </a>
+          <div class="kartu kontak-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4>Lokasi</h4>
+              <p>Kab. Blitar, Jawa Timur</p>
+            </div>
+          </div>
+          <div class="kartu kontak-item">
+            <i class="fa-solid fa-building-columns"></i>
+            <div>
+              <h4>Almamater</h4>
+              <p>Universitas Negeri Malang</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- form kirim pesan lewat whatsapp -->
+        <div class="kartu form-kontak muncul">
+          <h3>Kirim Pesan</h3>
+          <div class="form-grup">
+            <label for="namaPengirim">Nama</label>
+            <input type="text" id="namaPengirim" placeholder="Nama Anda">
+          </div>
+          <div class="form-grup">
+            <label for="emailPengirim">Email</label>
+            <input type="email" id="emailPengirim" placeholder="email@contoh.com">
+          </div>
+          <div class="form-grup">
+            <label for="isiPesan">Pesan</label>
+            <textarea id="isiPesan" rows="4" placeholder="Tulis pesan Anda disini..."></textarea>
+          </div>
+          <button class="btn btn-utama btn-penuh" onclick="kirimWA()">
+            <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p class="footer-nama">Arif Herfian Zaen Chartiko</p>
+    <div class="footer-sosial">
+      <a href="mailto:arif.herfian@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://wa.me/6285790226536" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Arif Herfian | S1 Pendidikan Teknik Informatika, Universitas Negeri Malang</p>
+  </footer>
+
+  <!-- tombol kembali ke atas -->
+  <button class="ke-atas" id="keAtas" title="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
